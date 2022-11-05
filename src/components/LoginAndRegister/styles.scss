@@ -1,13 +1,13 @@
 .loginFormContainer {
-  width: 600px;
-  height: 300px;
+   width: 600px;
+   height: 300px;
   margin: 100px auto;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: darkgreen;
   color: white;
   font-size: 20px;
+  background-size: 800px 250px;
 }
 
 .userNameContainer {
@@ -32,4 +32,12 @@
 }
 .passcodeItem{
   margin:0 10px 0 0;
+}
+.inputUsername{
+  border-radius: 15px;
+  border: white 2px solid;
+}
+.inputPasscode{
+  border-radius: 15px;
+  border: white 2px solid;
 }

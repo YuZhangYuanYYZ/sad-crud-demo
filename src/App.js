@@ -2,7 +2,7 @@ import './App.scss';
 import { Provider } from 'react-redux';
 import store from './store';
 import { SadCrudHeader } from './components/SadCrudHeader/SadCrudHeader.tsx';
-import { Login } from './components/Login';
+import { LoginAndRegister } from './components/LoginAndRegister';
 import { MainContent } from './components/MainContent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ function App() {
         <SadCrudHeader />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<LoginAndRegister />} />
             <Route path="/main" element={<MainContent />} />
           </Routes>
         </BrowserRouter>
