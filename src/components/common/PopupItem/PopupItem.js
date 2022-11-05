@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { useDispatch } from 'react-redux';
-import { validateName } from '../../utils/utils';
+import { validateName } from '../../utils/validationUtil';
 import { changeGlobalPopupState } from '../../../store/actions/changeGlobalPopupStateAction';
 
 export function PopupItem({ handleSubmit, currentItem, setItemPopup }) {
