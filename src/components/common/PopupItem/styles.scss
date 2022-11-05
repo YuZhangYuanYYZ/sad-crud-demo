@@ -1,0 +1,79 @@
+$bg-color:"red";
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.popupModal {
+  width: 450px;
+  height: 280px;
+  background: white;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+  border-radius: 6px;
+  .cancelBtn {
+    margin-right: 10px;
+  }
+}
+
+.formContainer {
+  width: 500px;
+  height: 250px;
+  margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  .itemLabel {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-top: 0px;
+    margin-left: 8px;
+    margin-bottom: 15px;
+    .inputContent {
+      width: 250px;
+    }
+  }
+  .submitButton {
+    background: $bg-color;
+    border: grey 1px solid;
+    text-align: center;
+    border-radius: 0px;
+    display: flex;
+    width: 80px;
+    height: 40px;
+    padding: 0px 20px;
+  }
+  .alert {
+    margin-top: -10px;
+    margin-left: 8px;
+    width: 350px;
+    height: 30px;
+    text-align: center;
+    padding: 2px;
+  }
+  .cancelBtn {
+    width: 80px;
+    height: 40px;
+    background-color: gray;
+    border: 1px solid black;
+  }
+}
+
+.cancelSubmitButtons {
+  width: 350px;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
