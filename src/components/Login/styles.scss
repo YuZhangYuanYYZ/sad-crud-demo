@@ -1,5 +1,35 @@
-.sadCrudHeader {
+.loginFormContainer {
+  width: 600px;
+  height: 300px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   background-color: darkgreen;
   color: white;
   font-size: 20px;
+}
+
+.userNameContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.passcodeContainer{
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+.loginButtonsContainer{
+  display: flex;
+  justify-content: space-between;;
+  margin: 30px 140px;
+}
+
+.userNameItem{
+  margin:0 10px 0 0;
+}
+.passcodeItem{
+  margin:0 10px 0 0;
 }

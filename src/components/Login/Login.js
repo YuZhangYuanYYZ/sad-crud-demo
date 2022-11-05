@@ -1,15 +1,22 @@
 import './styles.scss';
 import Button from 'react-bootstrap/Button';
-
+import { useState } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import { useDispatch } from 'react-redux';
 export function Login() {
+  const [userName, setUserName] = useState('');
+  const [passcode, setPasscode] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
+  const dispatch = useDispatch();
+
   return (
     <form className="loginFormContainer" onSubmit={1}>
-      <label className="itemLabel">
-        <p className="itemName">Username:</p>
+      <label className="userNameContainer">
+        <p className="userNameItem">Username:</p>
         <input
           className="inputUsername"
           type="text"
-          defaultValue={1}
+          defaultValue={userName}
           placeholder="please input user name"
           onBlur={(event) => {
             const newNameValue = event.target.value;
@@ -17,12 +24,12 @@ export function Login() {
         />
       </label>
 
-      <label className="itemLabel">
-        <p className="itemName">Passcode:</p>
+      <label className="passcodeContainer">
+        <p className="passcodeItem">Passcode:</p>
         <input
           className="inputPasscode"
           type="text"
-          defaultValue={2}
+          defaultValue={passcode}
           placeholder="please input passcode"
           onBlur={(event) => {
             const newItemDescription = event.target.value;
@@ -30,11 +37,11 @@ export function Login() {
         />
       </label>
 
-      <div className="cancelSubmitButtons">
-        <Button className="cancelBtn" onClick={() => 2}>
+      <div className="loginButtonsContainer">
+        <Button className="forgetPasswordBtn" onClick={() => 2}>
           忘记秘码
         </Button>
-        <input className="submitButton" type="submit" value="Save" />
+        <input className="loginButton" type="submit" value="Save" />
       </div>
     </form>
   );
