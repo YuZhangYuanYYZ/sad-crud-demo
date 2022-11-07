@@ -1,8 +1,5 @@
-import { SadCrudHeader } from './components/SadCrudHeader/SadCrudHeader.tsx';
 import { LoginAndRegister } from './components/LoginAndRegister';
 import { MainContent } from './components/MainContent';
-import { NoMatch } from './NoMatch';
-import { render } from 'react-dom';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { getJwtToken } from './services/auth/tokenStorage';
 

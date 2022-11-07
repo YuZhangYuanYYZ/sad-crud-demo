@@ -20,7 +20,6 @@ export function getItemFromAPI() {
 }
 
 export function editItemInAPI(newItem, itemId) {
-  const jwtToken = getJwtToken();
   const options = {
     headers: getHeaders(),
     method: 'PUT',
