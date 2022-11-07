@@ -1,11 +1,6 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import { Login } from '../Login';
-import { Register } from '../Register';
 import './styles.scss';
 
 export function Switcher({ children, activeIndex }) {
-  console.log('activeIndex', activeIndex);
   const contentItem = children.map((child, index) => {
     const visibility = activeIndex === index ? 'visible' : 'hidden';
     return (
@@ -36,4 +31,4 @@ function RightAction({ children }) {
 
 Switcher.ActionsContainer = ActionsContainer;
 Switcher.LeftAction = LeftAction;
-Switcher.RightAction = LeftAction;
+Switcher.RightAction = RightAction;

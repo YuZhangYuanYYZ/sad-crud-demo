@@ -45,7 +45,6 @@ app.get('/items/:id', authenticationMiddleware, function (req, res) {
 });
 
 app.delete('/items/:id', authenticationMiddleware, (req, res) => {
-  console.log(req, req.params, 'req  delete item');
   const id = Number(req.params.id);
   store.delete(id);
   res.status(200).send();
