@@ -15,7 +15,7 @@ export function MainContent() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="mainContent">
       {items && items.length > 0 && (
         <>
           <AddButton items={items}></AddButton>

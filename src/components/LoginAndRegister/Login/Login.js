@@ -1,22 +1,34 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userLogin } from '../../../services/auth/authAPI';
+import { setJwtToken } from '../../../services/auth/tokenStorage';
 import './styles.scss';
+
 export function Login() {
   const [userName, setUserName] = useState('');
   const [passcode, setPasscode] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     console.log(userName, passcode);
+    try {
+      const response = await userLogin({ username: userName, password: passcode });
+      setJwtToken(response.data.token);
+      navigate('/main');
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   return (
     <div className="loginFormContainer">
       <header className="loginHeader">Login</header>
       <form className="loginForm" onSubmit={handleLoginSubmit}>
         <label className="userNameContainer">
-          <p className="passcodeItem">Username:</p>
           <input
             className="inputUsername"
             type="text"
@@ -24,6 +36,7 @@ export function Login() {
             placeholder="Please input username"
             onBlur={(event) => {
               const newNameValue = event.target.value;
+              setUserName(newNameValue);
             }}
           />
         </label>
@@ -36,7 +49,8 @@ export function Login() {
             defaultValue={passcode}
             placeholder="please input passcode"
             onBlur={(event) => {
-              const newItemDescription = event.target.value;
+              const password = event.target.value;
+              setPasscode(password);
             }}
           />
         </label>

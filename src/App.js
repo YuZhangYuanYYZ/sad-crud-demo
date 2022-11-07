@@ -1,25 +1,16 @@
-import './App.scss';
 import { Provider } from 'react-redux';
-import store from './store';
+import './App.scss';
+import { ClientRoutes } from './ClientRoutes';
 import { SadCrudHeader } from './components/SadCrudHeader/SadCrudHeader.tsx';
-import { LoginAndRegister } from './components/LoginAndRegister';
-import { MainContent } from './components/MainContent';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import store from './store';
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
         <SadCrudHeader />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LoginAndRegister />} />
-            <Route path="/main" element={<MainContent />} />
-          </Routes>
-        </BrowserRouter>
+        <ClientRoutes />
       </div>
     </Provider>
   );
 }
-
-export default App;
