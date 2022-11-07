@@ -29,6 +29,7 @@ export function Login() {
       <header className="loginHeader">Login</header>
       <form className="loginForm" onSubmit={handleLoginSubmit}>
         <label className="userNameContainer">
+          <p className="userNameItem">Username:</p>
           <input
             className="inputUsername"
             type="text"

@@ -12,22 +12,22 @@ export function LoginAndRegister() {
       <Switcher activeIndex={activeIndex}>
         <Switcher.ActionsContainer>
           <Switcher.LeftAction>
-            <Button className="signup" onClick={() => setActiveIndex(1)}>
-              Login
-            </Button>
-          </Switcher.LeftAction>
-          <Switcher.RightAction>
-            <Register></Register>
-          </Switcher.RightAction>
-        </Switcher.ActionsContainer>
-        <Switcher.ActionsContainer>
-          <Switcher.LeftAction>
             <Button className="join" onClick={() => setActiveIndex(0)}>
               Sign Up
             </Button>
           </Switcher.LeftAction>
           <Switcher.RightAction>
             <Login></Login>
+          </Switcher.RightAction>
+        </Switcher.ActionsContainer>
+        <Switcher.ActionsContainer>
+          <Switcher.LeftAction>
+            <Button className="signup" onClick={() => setActiveIndex(1)}>
+              Login
+            </Button>
+          </Switcher.LeftAction>
+          <Switcher.RightAction>
+            <Register></Register>
           </Switcher.RightAction>
         </Switcher.ActionsContainer>
       </Switcher>
