@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { userSignUp } from '../../../services/auth/authAPI';
 import { setJwtToken } from '../../../services/auth/tokenStorage';
@@ -8,14 +7,10 @@ import './styles.scss';
 export function Register() {
   const [userName, setUserName] = useState('');
   const [passcode, setPasscode] = useState('');
-  const [confirmPasscode, setConfirmPasscode] = useState('');
-  const [showAlert, setShowAlert] = useState(false);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    console.log(userName, passcode);
     if (!(userName && passcode)) {
       return;
     }

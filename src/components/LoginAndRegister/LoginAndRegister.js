@@ -1,5 +1,5 @@
 import './styles.scss';
-import { Switcher } from './Switcher';
+import { Switcher, ActionsContainer, LeftAction, RightAction } from './Switcher';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Login } from './Login';
@@ -10,26 +10,26 @@ export function LoginAndRegister() {
   return (
     <div className="loginAndRegister">
       <Switcher activeIndex={activeIndex}>
-        <Switcher.ActionsContainer>
-          <Switcher.LeftAction>
+        <ActionsContainer>
+          <LeftAction>
             <Button className="join" onClick={() => setActiveIndex(1)}>
               Sign Up
             </Button>
-          </Switcher.LeftAction>
-          <Switcher.RightAction>
+          </LeftAction>
+          <RightAction>
             <Login></Login>
-          </Switcher.RightAction>
-        </Switcher.ActionsContainer>
-        <Switcher.ActionsContainer>
-          <Switcher.LeftAction>
+          </RightAction>
+        </ActionsContainer>
+        <ActionsContainer>
+          <LeftAction>
             <Button className="signup" onClick={() => setActiveIndex(0)}>
               Login
             </Button>
-          </Switcher.LeftAction>
-          <Switcher.RightAction>
+          </LeftAction>
+          <RightAction>
             <Register></Register>
-          </Switcher.RightAction>
-        </Switcher.ActionsContainer>
+          </RightAction>
+        </ActionsContainer>
       </Switcher>
     </div>
   );

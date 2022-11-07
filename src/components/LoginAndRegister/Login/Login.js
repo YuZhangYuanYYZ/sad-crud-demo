@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { userLogin } from '../../../services/auth/authAPI';
 import { setJwtToken } from '../../../services/auth/tokenStorage';
@@ -8,13 +7,10 @@ import './styles.scss';
 export function Login() {
   const [userName, setUserName] = useState('');
   const [passcode, setPasscode] = useState('');
-  const [showAlert, setShowAlert] = useState(false);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    console.log(userName, passcode);
     try {
       const response = await userLogin({ username: userName, password: passcode });
       setJwtToken(response.data.token);
