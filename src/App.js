@@ -1,14 +1,15 @@
-import './App.scss';
 import { Provider } from 'react-redux';
+import './App.scss';
+import { ClientRoutes } from './ClientRoutes';
+import { SadCrudHeader } from './components/SadCrudHeader/SadCrudHeader.tsx';
 import store from './store';
-import { SadCrudHeader } from './components/SadCrudHeader';
-import { MainContent } from './components/MainContent';
+
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
         <SadCrudHeader />
-        <MainContent />
+        <ClientRoutes />
       </div>
     </Provider>
   );

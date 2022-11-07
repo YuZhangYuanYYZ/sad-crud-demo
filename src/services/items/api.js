@@ -1,19 +1,28 @@
 import axios from 'axios';
+import { getJwtToken } from '../auth/tokenStorage';
 
 const API_BASE = process.env.REACT_APP_API_URL;
 const DATA_FORMATE = 'application/json';
+
+const getHeaders = () => {
+  const jwtToken = getJwtToken();
+  const headersWithToken = {
+    'Content-Type': DATA_FORMATE,
+    Authorization: `Bearer ${jwtToken}`,
+  };
+  return headersWithToken;
+};
+
 export function getItemFromAPI() {
-  return axios.get(`${API_BASE}/items`).then((response) => {
+  return axios.get(`${API_BASE}/items`, { headers: getHeaders() }).then((response) => {
     return response;
   });
 }
-const headers = {
-  'Content-Type': DATA_FORMATE,
-};
 
 export function editItemInAPI(newItem, itemId) {
+  const jwtToken = getJwtToken();
   const options = {
-    headers,
+    headers: getHeaders(),
     method: 'PUT',
     data: JSON.stringify(newItem),
     url: `${API_BASE}/items/${itemId}`,
@@ -26,9 +35,7 @@ export function editItemInAPI(newItem, itemId) {
 export function addAItemToAPI(newItem) {
   const options = {
     method: 'POST',
-    headers: {
-      'Content-Type': DATA_FORMATE,
-    },
+    headers: getHeaders(),
     data: JSON.stringify(newItem),
     url: `${API_BASE}/items`,
   };
@@ -40,33 +47,10 @@ export function addAItemToAPI(newItem) {
 export function deleteItemInAPI(itemId) {
   const options = {
     method: 'DELETE',
-    headers: {
-      'Content-Type': DATA_FORMATE,
-    },
+    headers: getHeaders(),
     url: `${API_BASE}/items/${itemId}`,
   };
   return axios(options).then((response) => {
     return response;
   });
 }
-
-let a = [1, 2, 3];
-let b = [3, 2, 1];
-
-function compareTriplets(a, b) {
-  let A = 0;
-  let B = 0;
-  const c = Array.from(a);
-  const d = Array.from(b);
-  console.log(c, d, 'c,d');
-  for (let i = 0; i < a.length; i++) {
-    if (c[i] > d[i]) {
-      A = A + 1;
-    } else if (c[i] < d[i]) {
-      B = B + 1;
-    }
-  }
-  return [A, B];
-}
-
-compareTriplets(a, b);

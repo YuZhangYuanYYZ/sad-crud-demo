@@ -1,0 +1,31 @@
+.switcherContainer{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.overlay{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #9CBBF2;
+    box-shadow: 0 6px 12px rgb(131 171 230 / 18%);
+    border-radius: 6px;
+    .visible{
+        display: block ;
+    }
+    .hidden{
+        display: none ;
+    }
+}
+
+.actionsContainer{
+    display: flex;
+    justify-content: space-around;
+    .action{
+        display: flex;
+        max-width: 600px;
+        align-items: center;
+    }
+    .leftItem .btn{
+        width: 100px;
+    }
+}
