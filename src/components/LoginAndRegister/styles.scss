@@ -1,16 +1,26 @@
-.loginAndRegister{
+.loginAndRegister {
   background: url('../../../public/backgroudphoto2.jpeg') no-repeat;
-  background-size: 100%;
-  height: 100vh;
-  background-position: 100% 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  z-index: -10;
+  zoom: 1;
+  background-size: cover;
+  background-position: center 0;
 }
 
-.loginButtonsContainer, .registerButtonsContainer{
+.loginButtonsContainer,
+.registerButtonsContainer {
   padding: 2rem;
   display: flex;
-  justify-content: center;;
+  justify-content: center;
+  ;
   margin: 30px 140px;
-  input[type=submit] {
+
+  input{
     background-color: yellowgreen;
     border: none;
     border-radius: 2rem;
@@ -21,17 +31,20 @@
   }
 }
 
-.userNameContainer,.passcodeContainer {
+.userNameContainer,
+.passcodeContainer {
   margin: 20px auto;
   display: flex;
   justify-content: center;
 }
 
-.userNameItem ,.passcodeItem{
-  margin:0 10px 0 0;
+.userNameItem,
+.passcodeItem {
+  margin: 0 10px 0 0;
 }
 
-.inputUsername, .inputPasscode{
+.inputUsername,
+.inputPasscode {
   border-radius: 15px;
   border: white 2px solid;
   font-size: 12px;
@@ -39,4 +52,3 @@
   border: white 2px solid;
   text-align: center;
 }
-
