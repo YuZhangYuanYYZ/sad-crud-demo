@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "17"
+  },
   "scripts": {
     "start": "nodemon itemAPI.js"
   },
