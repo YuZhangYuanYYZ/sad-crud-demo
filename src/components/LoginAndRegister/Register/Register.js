@@ -1,8 +1,6 @@
-import './styles.scss';
-import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
 import { useDispatch } from 'react-redux';
+import './styles.scss';
 export function Register() {
   const [userName, setUserName] = useState('');
   const [passcode, setPasscode] = useState('');
@@ -10,10 +8,15 @@ export function Register() {
   const [showAlert, setShowAlert] = useState(false);
   const dispatch = useDispatch();
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log(userName, passcode);
+  };
+
   return (
     <div className="registerFormContainer">
-      <header className="registerHeader">register</header>
-      <form className="registerForm" onSubmit={1}>
+      <header className="registerHeader">Sign Up</header>
+      <form className="registerForm" onSubmit={handleRegister}>
         <label className="userNameContainer">
           <p className="userNameItem">Username:</p>
           <input
@@ -40,7 +43,7 @@ export function Register() {
           />
         </label>
         <label className="confirmPContainer">
-          <p className="confirmPasscodeItem">Passcode:</p>
+          <p className="confirmPasscodeItem">ConfirmPasscode:</p>
           <input
             className="confirmPasscode"
             type="text"
@@ -53,7 +56,7 @@ export function Register() {
         </label>
 
         <div className="registerButtonsContainer">
-          <input className="registerButton" type="submit" value="REGISTER" />
+          <input className="registerButton" type="submit" value="Sign Up" />
         </div>
       </form>
     </div>

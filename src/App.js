@@ -6,16 +6,6 @@ import { LoginAndRegister } from './components/LoginAndRegister';
 import { MainContent } from './components/MainContent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Login />,
-//   },
-//   {
-//     path: '/main',
-//     element: <MainContent />,
-//   },
-// ]);
 function App() {
   return (
     <Provider store={store}>

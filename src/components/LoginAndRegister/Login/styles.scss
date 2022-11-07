@@ -7,7 +7,6 @@
   flex-direction: column;
   color: white;
   font-size: 20px;
-  background-image: url("../../../../public/backgroudphoto.jpg");
   background-size: 800px 250px;
 }
 
@@ -37,8 +36,12 @@
 .inputUsername{
   border-radius: 15px;
   border: white 2px solid;
+  font-size: 12px;
+  width: 160px;
 }
 .inputPasscode{
   border-radius: 15px;
   border: white 2px solid;
+  font-size: 12px;
+  width: 160px;
 }
