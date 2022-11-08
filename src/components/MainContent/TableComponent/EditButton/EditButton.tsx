@@ -5,7 +5,7 @@ import { editAItem } from '../../../../store/actions/editItemAction';
 import { PopupItem } from '../../../common/PopupItem';
 import { useState } from 'react';
 import { changeGlobalPopupState } from '../../../../store/actions/changeGlobalPopupStateAction';
-import { State } from '../../../../store/reducers/itemReducer';
+import { State } from '../../../../store/actions/itemTypes';
 import { AppDispatch } from '../../../../store';
 
 export function EditButton({ currentItem }) {

@@ -1,6 +1,6 @@
 import './styles.scss';
 
-export function Switcher({ children, activeIndex }) {
+export function Switcher({ children, activeIndex }): JSX.Element {
   const contentItem = children.map((child, index) => {
     const visibility = activeIndex === index ? 'visible' : 'hidden';
     return (
@@ -16,14 +16,14 @@ export function Switcher({ children, activeIndex }) {
   );
 }
 
-export function ActionsContainer({ children }) {
+export function ActionsContainer({ children }): JSX.Element {
   return <div className="actionsContainer">{children}</div>;
 }
 
-export function LeftAction({ children }) {
+export function LeftAction({ children }): JSX.Element {
   return <div className="leftItem action">{children}</div>;
 }
 
-export function RightAction({ children }) {
+export function RightAction({ children }): JSX.Element {
   return <div className="rightItem action">{children}</div>;
 }

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { PopupItem } from '../../common/PopupItem';
 import { addItem } from '../../../store/actions/addItemAction';
 import { changeGlobalPopupState } from '../../../store/actions/changeGlobalPopupStateAction';
-import { State } from '../../../store/reducers/itemReducer';
+import { State } from '../../../store/actions/itemTypes';
 import { SimpleItem } from '../../../store/actions/itemTypes';
 import { AppDispatch } from '../../../store';
 

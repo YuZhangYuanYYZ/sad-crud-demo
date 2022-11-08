@@ -3,9 +3,15 @@ export type SimpleItem = {
   description: string;
 };
 
-//From API
+//Item is From API
 export type Item = {
   id: number;
   name: string;
   description: string;
+};
+
+export type State = {
+  status: string;
+  items: Array<Item>;
+  popupState: boolean;
 };
