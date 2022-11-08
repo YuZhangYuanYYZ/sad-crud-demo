@@ -1,4 +1,5 @@
 import { editItemInAPI } from '../../services/items/api';
+import { AppDispatch } from '../';
 
 export const EDIT_ITEM_START = 'EDIT_ITEM_START';
 export const EDIT_ITEM_SUCCESS = 'EDIT_ITEM_SUCCESS';
@@ -23,9 +24,9 @@ export const editItemFail = (error) => ({
 });
 
 export function editAItem(item, itemId) {
-  return function (dispatch) {
+  return function (dispatch: AppDispatch) {
     dispatch(editItemStart());
-    editItemInAPI(item, itemId).then((response) => {
+    editItemInAPI(item, itemId).then((response: any) => {
       if (response.name === 'AxiosError') {
         dispatch(editItemFail(response.name));
       } else {

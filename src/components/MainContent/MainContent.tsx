@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TableComponent } from './TableComponent';
 import { AddButton } from './AddButton';
 import { getItemsList } from '../../store/actions/getItemAction';
+import { State } from '../../store/actions/itemTypes';
+import { AppDispatch } from '../../store';
 
 export function MainContent() {
-  const dispatch = useDispatch();
-  let items = useSelector((state) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const items = useSelector((state: State) => {
     return state.items;
   });
   useEffect(() => {
@@ -18,7 +20,7 @@ export function MainContent() {
     <div className="mainContent">
       {items && items.length > 0 && (
         <>
-          <AddButton items={items}></AddButton>
+          <AddButton></AddButton>
           <TableComponent items={items} />
         </>
       )}
