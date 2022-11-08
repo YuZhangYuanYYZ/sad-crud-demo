@@ -1,4 +1,5 @@
-$bg-yellowGreen:#3CB371;
+$bg-yellowGreen: #3CB371;
+
 .loginAndRegister {
   background: url('./assets/backgroudphoto2.jpeg') no-repeat;
   position: fixed;
@@ -21,7 +22,7 @@ $bg-yellowGreen:#3CB371;
   ;
   margin: 30px 140px;
 
-  input{
+  input {
     background-color: $bg-yellowGreen;
     border: none;
     border-radius: 2rem;
@@ -53,6 +54,8 @@ $bg-yellowGreen:#3CB371;
   border: white 2px solid;
   text-align: center;
 }
+
 .inputPasscode {
   margin-left: 5px;
 }
+
