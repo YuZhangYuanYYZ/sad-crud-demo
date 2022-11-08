@@ -30,11 +30,11 @@ npm start
 Then the frontend app will be ran in the development mode.
 Please open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-#### Step3: Login (admin,admin)
+### Step3: Login (admin,admin)
 
 You can use default username: admin defaultPasscode: admin to login.
 
-#### Step4: register a new username
+### Step4: register a new username
 
 You can also register by click Login button on the left of the first page and input a new username and password .After sign up, you'll login directly.
 
