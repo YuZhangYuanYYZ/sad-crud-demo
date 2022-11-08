@@ -5,9 +5,10 @@ import { TableComponent } from './TableComponent';
 import { AddButton } from './AddButton';
 import { getItemsList } from '../../store/actions/getItemAction';
 import { State } from '../../store/reducers/itemReducer';
+import { AppDispatch } from '../../store';
 
 export function MainContent() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const items = useSelector((state: State) => {
     return state.items;
   });
@@ -19,7 +20,7 @@ export function MainContent() {
     <div className="mainContent">
       {items && items.length > 0 && (
         <>
-          <AddButton items={items}></AddButton>
+          <AddButton></AddButton>
           <TableComponent items={items} />
         </>
       )}

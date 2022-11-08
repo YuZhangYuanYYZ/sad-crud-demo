@@ -6,10 +6,11 @@ import { PopupItem } from '../../../common/PopupItem';
 import { useState } from 'react';
 import { changeGlobalPopupState } from '../../../../store/actions/changeGlobalPopupStateAction';
 import { State } from '../../../../store/reducers/itemReducer';
+import { AppDispatch } from '../../../../store';
 
-export function EditButton({ items, currentItem }) {
+export function EditButton({ currentItem }) {
   const [editItemPopup, setEditItemPopup] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const handleEitItemSubmit = (item) => {
     dispatch(editAItem(item, currentItem.id));
   };
@@ -30,12 +31,7 @@ export function EditButton({ items, currentItem }) {
         Edit
       </Button>
       {editItemPopup ? (
-        <PopupItem
-          items={items}
-          handleSubmit={handleEitItemSubmit}
-          currentItem={currentItem}
-          setItemPopup={setEditItemPopup}
-        />
+        <PopupItem handleSubmit={handleEitItemSubmit} currentItem={currentItem} setItemPopup={setEditItemPopup} />
       ) : null}
     </div>
   );

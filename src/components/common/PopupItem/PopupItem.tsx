@@ -5,14 +5,22 @@ import Alert from 'react-bootstrap/Alert';
 import { useDispatch } from 'react-redux';
 import { validateName } from '../../utils/validationUtil';
 import { changeGlobalPopupState } from '../../../store/actions/changeGlobalPopupStateAction';
+import { SimpleItem, Item } from '../../../store/actions/itemTypes';
+import { AppDispatch } from '../../../store';
 
-export function PopupItem({ handleSubmit, currentItem, setItemPopup }): JSX.Element {
+type Props = {
+  handleSubmit: (item: SimpleItem) => void;
+  currentItem?: Item;
+  setItemPopup: (flag: boolean) => void;
+};
+
+export function PopupItem({ handleSubmit, currentItem, setItemPopup }: Props): JSX.Element {
   const currentItemName = currentItem ? currentItem.name : '';
   const currentItemDescription = currentItem ? currentItem.description : '';
   const [itemName, setItemName] = useState(currentItemName);
   const [itemDescription, setItemDescription] = useState(currentItemDescription);
   const [showAlert, setShowAlert] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   function validateAndHandleSubmit(event, setItemPopup) {
     event.preventDefault();

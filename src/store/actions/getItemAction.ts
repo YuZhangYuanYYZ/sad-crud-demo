@@ -1,4 +1,5 @@
 import { getItemFromAPI } from '../../services/items/api';
+import { AppDispatch } from '../';
 
 export const GET_ITEM_START = 'GET_ITEM_START ';
 export const GET_ITEM_SUCCESS = 'GET_ITEM_SUCCESS';
@@ -19,8 +20,8 @@ export const getItemFail = (error) => ({
   },
 });
 
-export function getItemsList(): any {
-  return function (dispatch): void {
+export function getItemsList() {
+  return function (dispatch: AppDispatch): void {
     dispatch(getItemStart());
     getItemFromAPI().then((response: any) => {
       if (response.name === 'AxiosError') {

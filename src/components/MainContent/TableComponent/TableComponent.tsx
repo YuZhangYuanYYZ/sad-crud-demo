@@ -21,7 +21,7 @@ export function TableComponent({ items }) {
                 <th>{item.name}</th>
                 <td>{item.description}</td>
                 <td className="editDeleteButtons">
-                  <EditButton items={items} currentItem={item}></EditButton>
+                  <EditButton currentItem={item}></EditButton>
                   <DeleteButton itemId={item.id}></DeleteButton>
                 </td>
               </tr>

@@ -16,8 +16,6 @@ npm install
 npm start
 ```
 
-Then you can access [http://localhost:3100/items/](http://localhost:3100/items/) to see the API response to verify the API is running.
-
 ### Step 2: Start react app
 
 Keep your mock API running in port 3100.
