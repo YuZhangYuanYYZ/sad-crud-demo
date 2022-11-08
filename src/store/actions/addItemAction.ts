@@ -21,10 +21,10 @@ export const addAItemFail = (error) => ({
   },
 });
 
-export function addItem(newItem) {
+export function addItem(newItem): any {
   return function (dispatch) {
     dispatch(addAItemStart());
-    addAItemToAPI(newItem).then((response) => {
+    addAItemToAPI(newItem).then((response: any) => {
       if (response.name === 'AxiosError') {
         dispatch(addAItemFail(response.name));
       } else {

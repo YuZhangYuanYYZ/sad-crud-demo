@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TableComponent } from './TableComponent';
 import { AddButton } from './AddButton';
 import { getItemsList } from '../../store/actions/getItemAction';
+import { State } from '../../store/reducers/itemReducer';
 
 export function MainContent() {
   const dispatch = useDispatch();
-  let items = useSelector((state) => {
+  const items = useSelector((state: State) => {
     return state.items;
   });
   useEffect(() => {

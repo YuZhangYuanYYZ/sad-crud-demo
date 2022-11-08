@@ -3,10 +3,10 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { useDispatch } from 'react-redux';
-import { validateName } from '../../utils/validationUtil.ts';
+import { validateName } from '../../utils/validationUtil';
 import { changeGlobalPopupState } from '../../../store/actions/changeGlobalPopupStateAction';
 
-export function PopupItem({ handleSubmit, currentItem, setItemPopup }) {
+export function PopupItem({ handleSubmit, currentItem, setItemPopup }): JSX.Element {
   const currentItemName = currentItem ? currentItem.name : '';
   const currentItemDescription = currentItem ? currentItem.description : '';
   const [itemName, setItemName] = useState(currentItemName);

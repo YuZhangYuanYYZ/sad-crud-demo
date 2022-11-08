@@ -5,11 +5,12 @@ import Button from 'react-bootstrap/Button';
 import { PopupItem } from '../../common/PopupItem';
 import { addItem } from '../../../store/actions/addItemAction';
 import { changeGlobalPopupState } from '../../../store/actions/changeGlobalPopupStateAction';
+import { State } from '../../../store/reducers/itemReducer';
 
 export function AddButton() {
   const [addItemPopup, setAddItemPopup] = useState(false);
   const dispatch = useDispatch();
-  const globalPoputState = useSelector((state) => {
+  const globalPoputState = useSelector((state: State) => {
     return state.popupState;
   });
   const handleSubmit = (newItem) => {

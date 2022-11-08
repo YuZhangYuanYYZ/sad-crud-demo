@@ -21,10 +21,10 @@ export const deleteItemFail = (error) => ({
   },
 });
 
-export function deleteAItem(itemId) {
+export function deleteAItem(itemId): any {
   return function (dispatch) {
     dispatch(deleteItemStart());
-    deleteItemInAPI(itemId).then((response) => {
+    deleteItemInAPI(itemId).then((response: any) => {
       if (response.name === 'AxiosError') {
         dispatch(deleteItemFail(response.name));
       } else {

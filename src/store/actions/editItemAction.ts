@@ -22,10 +22,10 @@ export const editItemFail = (error) => ({
   },
 });
 
-export function editAItem(item, itemId) {
+export function editAItem(item, itemId): any {
   return function (dispatch) {
     dispatch(editItemStart());
-    editItemInAPI(item, itemId).then((response) => {
+    editItemInAPI(item, itemId).then((response: any) => {
       if (response.name === 'AxiosError') {
         dispatch(editItemFail(response.name));
       } else {

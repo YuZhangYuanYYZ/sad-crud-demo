@@ -19,10 +19,10 @@ export const getItemFail = (error) => ({
   },
 });
 
-export function getItemsList() {
-  return function (dispatch) {
+export function getItemsList(): any {
+  return function (dispatch): void {
     dispatch(getItemStart());
-    getItemFromAPI().then((response) => {
+    getItemFromAPI().then((response: any) => {
       if (response.name === 'AxiosError') {
         dispatch(getItemFail(response.name));
       } else {

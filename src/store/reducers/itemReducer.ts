@@ -3,7 +3,20 @@ import { DELETE_ITEM_START, DELETE_ITEM_SUCCESS, DELETE_ITEM_FAIL } from '../act
 import { GET_ITEM_START, GET_ITEM_SUCCESS, GET_ITEM_FAIL } from '../actions/getItemAction';
 import { EDIT_ITEM_START, EDIT_ITEM_SUCCESS, EDIT_ITEM_FAIL } from '../actions/editItemAction';
 import { CHANGE_POPUP_START } from '../actions/changeGlobalPopupStateAction';
-const initialState = {
+
+export type Item = {
+  id: number;
+  name: string;
+  description: string;
+};
+
+export type State = {
+  status: string;
+  items: Array<Item>;
+  popupState: boolean;
+};
+
+const initialState: State = {
   status: 'idle',
   items: [],
   popupState: false,
